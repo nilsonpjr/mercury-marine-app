@@ -6,20 +6,23 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Instalar as dependências do sistema para o Playwright
-# As dependências exatas podem variar, mas estas são comuns para Debian/Ubuntu
+# Uma lista mais minimalista e comum para Playwright em ambientes Debian/Ubuntu
 RUN apt-get update && apt-get install -y \
-    libgtk-4-1 \
-    libgraphene-1.0-0 \
-    libatomic1 \
-    libwoff2-1.0-0 \
-    libevent-2.1-7 \
-    libgstgl-1.0-0 \
-    libgstcodecparsers-1.0-0 \
-    libwebpdemux2 \
-    libavif13 \
-    libenchant-2-2 \
-    libsecret-1-0 \
-    libmanette-0.2-0 \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libdrm-dev \
+    libgbm-dev \
+    libglib2.0-0 \
+    libgtk-3-0 \
+    libxkbcommon-x11-0 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxext6 \
+    libxfixes3 \
+    libxrandr2 \
+    libxtst6 \
     --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # Instalar os navegadores do Playwright
